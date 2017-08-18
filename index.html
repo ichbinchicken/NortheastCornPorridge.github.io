@@ -9,6 +9,9 @@
 body {
    background-color: #F5F5F5 
 }
+.table {
+    table-layout:fixed;
+}
 .rotateimg90 {
   -webkit-transform:rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -19,25 +22,26 @@ body {
 </style>
 </head>
 <body>
-<div class="text" style="text-align:center">
-Hello, this is my homepage!
-<p>
-Add more soon...<b>Maybe</b> late 2017??
-<br>
-Cheers...Toby
-<br>
-</p>
-<p>
-你好，朋友！敬请期待2017年末上线 d(`･∀･)b
-</p>
-<p>
-Beaches in Busselton, WA Australia
-<br></div>
-<center>
-<img src="pics/IMG_0102.JPG" alt="Beach1" style="width:500px;height:300px;"><br>
-<img src="pics/IMG_0238.JPG" alt="Beach2" style="width:500px;height:300px;"><br>
-<img class="rotateimg90" src="pics/IMG_0239.JPG" alt="Beach3" style="width:340px;height:350px;"><br>
-</center>
-</p>
+<table border="0" align="center" width="90%">
+<tr>
+    <td style="vertical-align:top"><div class="text" style="text-align:center">
+        Hello, this is my homepage!
+        <p>
+        Add more soon...<b>Maybe</b> late 2017??
+        <br>Cheers...Toby
+        <br>你好，朋友！敬请期待2017年末上线 d(`･∀･)b
+        </p>
+        </div>
+    </td>
+    <td style="vertical-align:top">
+        <p class="text" style="text-align:center"><b>Beaches in Busselton, WA Australia</b></p>
+        <center>
+        <img src="pics/IMG_0102.JPG" alt="Beach1" style="width:500px;height:300px;"><br>
+        <img src="pics/IMG_0238.JPG" alt="Beach2" style="width:500px;height:300px;"><br>
+        <img class="rotateimg90" src="pics/IMG_0239.JPG" alt="Beach3" style="width:340px;height:350px;"><br>
+        </center>
+    </td>
+</tr>
 </body>
+</table>
 </html>
