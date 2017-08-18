@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>code arsenal</title>
-<link ref="stylesheet" href="animate.css">
+<link rel="stylesheet" type="text/css" href="animate.css">
 <script src="jquery.js"></script>
-<script src="jquery.lettering.js></script>
-<script src="jquery.textillate.js></script>
+<script src="jquery.lettering.js"></script>
+<script src="jquery.textillate.js"></script>
 <style type="text/css">
-.text {
+.text,h1 {
     font-family:PT Sans;
-j
-body {
-   background-color: #F5F5F5 
 }
-.table {
+body {
+   background-color: #F5F5F5
+}
+table {
     table-layout:fixed;
 }
 .rotateimg90 {
@@ -27,23 +27,20 @@ body {
 </style>
 </head>
 <body>
-<h1 class="tlt">QualityLessons.Net - with Mohit</h1>
-<script>
-$('.tlt').textillate({
-int:{effect:'rollIn', delay:10},
-out: {effect:'bounce'},
-loop:true
-});
-</script>
-<table border="0" align="center" width="90%">
+<h1 class="text">
+<b>tobbyzheng@github</b></h1>
+<table border="0" align="left" width="70%">
 <tr>
-    <td style="vertical-align:top"><div class="text" style="text-align:center">
-        Hello, this is my homepage!
-        <p>
-        Add more soon...<b>Maybe</b> late 2017??
-        <br>Cheers...Toby
-        <br>你好，朋友！敬请期待2017年末上线 d(`･∀･)b
-        </p>
+    <td style="vertical-align:top">
+        <div class="text" style="text-align:left">
+            <p class="tlt">Hello, this is my homepage! Add more soon...Maybe late 2017?? Cheers...Toby 你好，朋友！敬请期待2017年末上线 d(`･∀･)b</p>
+            <script>
+            $('.tlt').textillate({
+            in: { effect:'fadeInLeftBig', delay:14, shuffle: true},
+            out: { effect:'hinge', shuffle: true, delay:14},
+            loop:true
+            });
+            </script>
         </div>
     </td>
     <td style="vertical-align:top">
