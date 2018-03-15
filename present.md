@@ -1,5 +1,6 @@
 ## Simple Format Print exploit
 ```c
+//format.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,7 +11,8 @@
 int target;
 void hacking(char *string) {
     printf(string);
-    if (target) printf("target has been modified: \n");
+    printf("\n");
+    if (target) printf("target has been modified.\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -21,7 +23,6 @@ int main(int argc, char *argv[]) {
 * Try `argv[1] = "%x %x %x"`
 * We can find it is a memory leak vulnerability.
 * What values are the `printf` reading?
-    * Whatever `printf` can find on the stack.
 * Spec of `printf` on Linux Manual `man 3 printf`
 ```
 Code such as printf(foo); often indicates a bug, since foo may contain a % 
@@ -39,5 +40,13 @@ int main(void) {
     int num;
     printf("Hello %n World\n", &num);
     printf("num = %d\n", num);
+    // Therefore, num should be equal to 6 because before %n there are 6 characters were already printed.
     return 0;
 }
+```
+* Now, we need to find the address of `num` first in order to modify its value.
+    * `mem(\x08\x49\x33\x22) = objdump -t format` 
+    * 
+    ```
+    ./format "`python -c print('\x08\x49\x33\22' + '%x '\*127)`"
+    ```
