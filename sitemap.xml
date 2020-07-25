@@ -4,14 +4,28 @@
     
         
         <url>
-            <loc>https://northeastcornporridge.github.io/posts/my-first-post/</loc>
-            <lastmod>2020-07-24T00:00:00+00:00</lastmod>
+            <loc>https://northeastcornporridge.github.io/secret/good-stuff/</loc>
+            <lastmod>2020-07-26T01:28:40+10:00</lastmod>
         </url>
         
     
         
         <url>
             <loc>https://northeastcornporridge.github.io/</loc>
+            <lastmod>2020-07-26T01:28:40+10:00</lastmod>
+        </url>
+        
+    
+        
+        <url>
+            <loc>https://northeastcornporridge.github.io/secret/</loc>
+            <lastmod>2020-07-26T01:28:40+10:00</lastmod>
+        </url>
+        
+    
+        
+        <url>
+            <loc>https://northeastcornporridge.github.io/posts/my-first-post/</loc>
             <lastmod>2020-07-24T00:00:00+00:00</lastmod>
         </url>
         
