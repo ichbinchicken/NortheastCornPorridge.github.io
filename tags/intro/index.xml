@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>intro on 会稽山下磨叽喵</title>
+    <link>https://ichbinchicken.github.io/tags/intro/</link>
+    <description>Recent content in intro on 会稽山下磨叽喵</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Jul 2020 11:51:56 +1000</lastBuildDate><atom:link href="https://ichbinchicken.github.io/tags/intro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello</title>
+      <link>https://ichbinchicken.github.io/posts/hello/</link>
+      <pubDate>Sun, 26 Jul 2020 11:51:56 +1000</pubDate>
+      
+      <guid>https://ichbinchicken.github.io/posts/hello/</guid>
+      <description>This is my first blog post. Thank you for visiting my blog site!&amp;quot; 💙</description>
+    </item>
+    
+  </channel>
+</rss>

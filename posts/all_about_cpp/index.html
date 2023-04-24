@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> All about cpp | 会稽山下磨叽喵</title>
+  <link rel = 'canonical' href = 'https://ichbinchicken.github.io/posts/all_about_cpp/'>
+  <meta name="description" content="ich bin chicken.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="All about cpp" />
+<meta property="og:description" content="Week 1 Wed community: #include &lt;c&#43;&#43;&gt; quick links: https://abseil.io/ https://www.stroustrup.com/index.html const auto const course_code = std:string(&quot;COMP6771&quot;) The whole string is constant If the const is on string builder, the string that is appended everytime is constant const is always on the right string comparision and assignment != to compare two string literal values not reference of string (unlike Java) The slide mentions C&#43;&#43; value semantics Thurs The compiler we&rsquo;re using: clang&#43;&#43;-11 hello." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ichbinchicken.github.io/posts/all_about_cpp/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-14T15:45:40+10:00" />
+<meta property="article:modified_time" content="2020-09-14T15:45:40+10:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="All about cpp"/>
+<meta name="twitter:description" content="Week 1 Wed community: #include &lt;c&#43;&#43;&gt; quick links: https://abseil.io/ https://www.stroustrup.com/index.html const auto const course_code = std:string(&quot;COMP6771&quot;) The whole string is constant If the const is on string builder, the string that is appended everytime is constant const is always on the right string comparision and assignment != to compare two string literal values not reference of string (unlike Java) The slide mentions C&#43;&#43; value semantics Thurs The compiler we&rsquo;re using: clang&#43;&#43;-11 hello."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ichbinchicken.github.io/css/styles.4c2b9aa1d874d6766f554b2d404e8fd62ab4761f51ee9b3f358d12e81e7fa43a1b4378db995bc1926bbe5ed98c060be5e7bd4f2470504cf94f22b4b3a74e62b6.css" integrity="sha512-TCuaodh01nZvVUstQE6P1iq0dh9R7ps/NY0S6B5/pDobQ3jbmVvBkmu&#43;XtmMBgvl571PJHBQTPlPIrSzp05itg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ichbinchicken.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/life">日常</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ichbinchicken.github.io/life/watamolla_hiking/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ichbinchicken.github.io/posts/customisation_of_markdown_preview_enhanced/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&text=All%20about%20cpp" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&title=All%20about%20cpp" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&is_video=false&description=All%20about%20cpp" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=All%20about%20cpp&body=Check out this article: https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&title=All%20about%20cpp" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&title=All%20about%20cpp" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&name=All%20about%20cpp&description=Week%201%20Wed%20community%3a%20%23include%20%26lt%3bc%2b%2b%26gt%3b%20quick%20links%3a%20https%3a%2f%2fabseil.io%2f%20https%3a%2f%2fwww.stroustrup.com%2findex.html%20const%20auto%20const%20course_code%20%3d%20std%3astring%28%26quot%3bCOMP6771%26quot%3b%29%20The%20whole%20string%20is%20constant%20If%20the%20const%20is%20on%20string%20builder%2c%20the%20string%20that%20is%20appended%20everytime%20is%20constant%20const%20is%20always%20on%20the%20right%20string%20comparision%20and%20assignment%20%21%3d%20to%20compare%20two%20string%20literal%20values%20not%20reference%20of%20string%20%28unlike%20Java%29%20The%20slide%20mentions%20C%2b%2b%20value%20semantics%20Thurs%20The%20compiler%20we%26rsquo%3bre%20using%3a%20clang%2b%2b-11%20hello." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&t=All%20about%20cpp" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#wed">Wed</a></li>
+    <li><a href="#thurs">Thurs</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#wed-1">Wed</a>
+      <ul>
+        <li><a href="#lambda-function-need-to-revisit"><strong>Lambda function need to revisit!!</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#thurs-1">Thurs</a>
+      <ul>
+        <li><a href="#more-on-vector-need-to-revisit-later"><strong>More on vector: need to revisit later!!!</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#wed-2">Wed</a></li>
+    <li><a href="#thurs-2">Thurs</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#weds">Weds</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        All about cpp
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-09-14 15:45:40 &#43;1000 AEST" itemprop="datePublished">2020-09-14</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          5 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/tech" rel="tag">tech</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h1 id="week-1">Week 1</h1>
+<h2 id="wed">Wed</h2>
+<ul>
+<li>community: <code>#include &lt;c++&gt;</code></li>
+<li>quick links:
+<ul>
+<li><a href="https://abseil.io/">https://abseil.io/</a></li>
+<li><a href="https://www.stroustrup.com/index.html">https://www.stroustrup.com/index.html</a></li>
+</ul>
+</li>
+<li>const
+<ul>
+<li><code>auto const course_code = std:string(&quot;COMP6771&quot;)</code> The whole string is constant</li>
+<li>If the const is on string builder, the string that is appended everytime is constant</li>
+<li><code>const</code> is always on the right</li>
+</ul>
+</li>
+<li>string comparision and assignment
+<ul>
+<li><code>!=</code> to compare two string literal values not reference of string (unlike Java)</li>
+<li>The slide mentions C++ value semantics</li>
+</ul>
+</li>
+</ul>
+<h2 id="thurs">Thurs</h2>
+<ul>
+<li>The compiler we&rsquo;re using: <code>clang++-11 hello.cpp -o hello</code></li>
+<li><code>clang++-11 -Wall -Wextra -pedantic -std=c++20 -stdlib=libc++ -o hello_test hello.cpp hello_test.cpp</code></li>
+<li>This course is using CMake, clang-tidy. Chris had some demos on how to use the test framework in the first 30 mins of lecture</li>
+<li>Type conversion
+<ul>
+<li>narrow(lossy) conversion, for example int =&gt; bool</li>
+</ul>
+</li>
+<li>Default arguments
+<ul>
+<li><code>std::string rgb(short r = 0, short g = 0, short b = 0);</code></li>
+</ul>
+</li>
+<li>Two librarys learnt:
+<ul>
+<li><code>https://github.com/gsl-lite/gsl-lite</code></li>
+<li><code>https://github.com/abseil/abseil-cpp</code></li>
+</ul>
+</li>
+<li>We read backwards: a reference to a const integer i <code>auto i = 1; auto const&amp; ref = i;</code></li>
+<li>benchmark library: <code>https://github.com/google/benchmark</code></li>
+<li>cpp reference <code>&amp;</code>
+<ul>
+<li>Don&rsquo;t need to use <code>-&gt;</code> to access elements</li>
+<li>Can&rsquo;t be null</li>
+<li>You can&rsquo;t change what they refer to once set</li>
+</ul>
+</li>
+</ul>
+<h1 id="week-2---need-to-be-revisited">Week 2 - need to be revisited</h1>
+<h2 id="wed-1">Wed</h2>
+<ul>
+<li>Iterator avoids losing track of container
+<pre tabindex="0"><code>auto playing_card = ranges::find(hand, blue_number);
+REQUIRE(playing_card != hand.end());
+CHECK(*playing_card == blue_number);
+
+playing_card = hand.erase(playing_card); // we remove a card from our hand when we play it
+REQUIRE(playing_card != hand.end());
+CHECK(*playing_card == green_draw_two);
+</code></pre>The <code>erase()</code> function returns a new iterator to update the new position in the container. This is because when <code>vector</code> shrinks, the memory will change. If you don&rsquo;t use the new iterator, the old one may point to null.
+<pre tabindex="0"><code>auto playing_card = ranges::find(hand, blue_number);
+REQUIRE(playing_card != hand.end());
+CHECK(*playing_card == blue_number);
+
+hand.push_back(green_draw_two);
+card_to_play = ranges::find(hand, blue_number)
+</code></pre>Same reason as above. When <code>vector</code> expands, the memory will change. We need to re-find the element and the <code>find()</code> will return an updated new iterator.</li>
+<li>erase function we saw in this course
+<ul>
+<li><code>vector.erase(iterator)</code></li>
+<li><code>std::erase(vector, element)</code></li>
+</ul>
+</li>
+<li>
+<h3 id="lambda-function-need-to-revisit"><strong>Lambda function need to revisit!!</strong></h3>
+</li>
+<li>static program analysis: clang-tidy</li>
+<li>link: just to understand iterator pattern</li>
+</ul>
+<h2 id="thurs-1">Thurs</h2>
+<ul>
+<li>
+<h3 id="more-on-vector-need-to-revisit-later"><strong>More on vector: need to revisit later!!!</strong></h3>
+</li>
+</ul>
+<h1 id="week-3">Week 3</h1>
+<h2 id="wed-2">Wed</h2>
+<ul>
+<li>copy constructor: given <code>auto v2 = std::vector&lt;int&gt;{}</code>
+<ul>
+<li><code>auto v3 = v2;</code></li>
+<li><code>auto v3 = std::vector&lt;int&gt;(v2);</code></li>
+<li>They are the same.</li>
+</ul>
+</li>
+<li>In a C++ class, if access modifier is not specified, the method is private by default.</li>
+<li>Definition of class initialiser: <code>double salary = 1200.5;</code> in the class</li>
+<li>There is a benefit of constructor initialiser list and uniform intialisation: Initialiser lists and uniform initialisation avoid having to construct an object once, and then reassign it to a different value after construction. It is more efficient, and for some types, you will not be able to compile without it.
+<pre tabindex="0"><code>class person {
+public:
+    person()
+    : age_{99} { // This is ok!
+        /* age_ = 20  (Compile Error!!) */
+    }
+    auto get_age() -&gt; int const&amp;;
+private:
+    int const age_ = 18;
+};
+</code></pre><ul>
+<li>If the private variable is defined in const <code>auto const age_ = 18;</code>, then the const value can be overwritten by constructor initialiser list but can&rsquo;t be written by the assignment in the constructor.</li>
+</ul>
+</li>
+</ul>
+<h2 id="thurs-2">Thurs</h2>
+<ul>
+<li><code>explicit</code> keyword to disable implicit conversion.</li>
+<li>const object can only call const method functions, but const method can be called in any object.
+<ul>
+<li>There is an exception: using <code>mutable</code> keyword</li>
+</ul>
+</li>
+<li><code>static auto valid_name(std::string const&amp; name) -&gt; bool</code> is a static method in cpp.
+<ul>
+<li>Rule of thumb: you can use static method whenever that method doesn&rsquo;t require any class variables.</li>
+</ul>
+</li>
+<li>static class variable
+<ul>
+<li>Rule of thumb: you may use it to define some constants associated with class for example <code>std::string::npods</code>.</li>
+</ul>
+</li>
+<li>inline static variable
+<ul>
+<li><code>static int MAX_LENGTH_NUM = 20</code> - You declared the variable but haven&rsquo;t defined it yet. To make it work: <code>inline static int MAX_LENGTH_NUM = 20</code></li>
+<li>The definition can appear in multiple files, what <code>inline</code> means the compiler will pick up one special file and put definition in only that one file. In our case, <code>MAX_LENGTH_NUM</code> is defined once but is declared many times.</li>
+<li>More inline ref: <a href="https://www.quora.com/What-are-the-use-cases-of-inline-variables-introduced-in-C++17">https://www.quora.com/What-are-the-use-cases-of-inline-variables-introduced-in-C++17</a></li>
+<li>Q: Why <code>static int const MAX_LENGth_NUM = 20</code> doesn&rsquo;t work?
+<ul>
+<li>A: Compiler error: C++ forbids in-class initialization of non-const static member</li>
+<li>A: <a href="https://stackoverflow.com/questions/9656941/why-cant-i-initialize-non-const-static-member-or-static-array-in-class/9657064">https://stackoverflow.com/questions/9656941/why-cant-i-initialize-non-const-static-member-or-static-array-in-class/9657064</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>copying constructor is a default thing that cpp compiler is able to do though the user doesn&rsquo;t write the constructor with the copying paratemeter explicitly.
+<pre tabindex="0"><code>auto a = intvec{}
+auto b = intvec{a}
+</code></pre></li>
+<li><code>intvec() = default</code> defines default constructor. Note that <code>intvec()</code> is a constructor.</li>
+<li><code>intvec() = delete</code> It is to prevent copy constructor when it is called implicitly. For example, when the calling function has &ldquo;passed-by-value&rdquo; parameter.
+<ul>
+<li>ref: <a href="https://www.youtube.com/watch?v=zWG0K_c7fI4">https://www.youtube.com/watch?v=zWG0K_c7fI4</a></li>
+</ul>
+</li>
+<li><code>friend</code> will be used in <code>operator+,-, *, /, %, &lt;&lt;</code>-like operator overloading for example <code>friend point operator+(point const&amp; lhs, point const&amp; rhs)</code>.
+<ul>
+<li>please put the friend operators implementation in class definition (header file)</li>
+<li>Q: why we need to have friend ???</li>
+<li>A: for example interface - friend method can cache the values the interface provides</li>
+</ul>
+</li>
+<li>Operator overloading - It is &ldquo;overloading&rdquo; so any return type and parameter type should be fine. However, it has special meaning to use reference or whether to be friend or object memeber. However, you can do anything doesn&rsquo;t mean you should do anything.</li>
+<li>for <code>operator+=</code>-like operator overloading for example
+<pre tabindex="0"><code>point point::operator+=(point const&amp; p) {
+    x_ += p.x_;
+    y_ += p.y_;
+    return *this;
+}
+</code></pre><ul>
+<li>It is class method because the current object <code>this</code> has meaning on it, whereas, <code>operator+,-,*,/,%,&lt;&lt;</code>-like, there is no current object involved and therefore, we use friend.</li>
+</ul>
+</li>
+<li>Miscs
+<ul>
+<li><code>[[nodiscard]]</code> to let compiler give warnings if the return value from a function(struct) isn&rsquo;t handled in the caller function.</li>
+<li>A <code>noexcept</code> specification on a function is merely a method for a programmer to inform the compiler whether or not a function should throw exceptions.
+<ul>
+<li><code>car::~car() noexcept;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="week-4">Week 4</h1>
+<h2 id="weds">Weds</h2>
+<ul>
+<li>hidden friend functions are functions defined inside class and regular friend functions are functions defined outside class.</li>
+<li>assignment is <code>p2 = p1</code> instead of <code>auto p2 = p1</code>. The latter one is doing copy constructor.</li>
+<li>subscript operator overloading
+<pre tabindex="0"><code>int operator[](int index) const {
+    return index == 0 ? x_ : y_;
+}
+</code></pre><ul>
+<li>This one is for p1[0]</li>
+</ul>
+<pre tabindex="0"><code>int&amp; operator[] (int index) {
+    return index == 0 ? x_ : y_;
+}
+</code></pre><ul>
+<li>This one is for p1[0] = 100</li>
+</ul>
+</li>
+<li>Why we prefer <code>static_cast</code>? It&rsquo;s because <code>static_cast</code> is written by programmer and it has clear error message. Otherwise it is compiler generating error message.</li>
+<li>type conversion operator overloading: it is better to include <code>explicit</code> to force explicit conversion for type conversion operator overloading.
+<pre tabindex="0"><code>explicit operator std::vector&lt;int&gt;() const {
+	return std::vector&lt;int&gt;{x_, y_};
+}
+</code></pre><ul>
+<li>Below is the usage: implicit type conversion is not a good practise because of the behaviour of compiler.
+<pre tabindex="0"><code>std::vector&lt;int&gt; vec = p; // implicit
+auto vec = std::vector&lt;int&gt;(p); // explicit
+auto vec = static_cast&lt;std::vector&lt;int&gt;&gt;(p); // explicit
+</code></pre></li>
+</ul>
+</li>
+<li>Compiler Explorer options: <code>x86-64 clang(trunk) -std=c++20 -stdlib=libc++</code></li>
+</ul>
+<h1 id="to-explore-more-later">To explore more later:</h1>
+<ul>
+<li><a href="https://stackoverflow.com/questions/9656941/why-cant-i-initialize-non-const-static-member-or-static-array-in-class/9657064">https://stackoverflow.com/questions/9656941/why-cant-i-initialize-non-const-static-member-or-static-array-in-class/9657064</a></li>
+<li>inline variable and function</li>
+<li><code>&quot;hadyen&quot;s</code></li>
+<li><code>mutable</code> keyword</li>
+<li>hidden friend in cpp (friend function is private) <a href="https://www.justsoftwaresolutions.co.uk/cplusplus/hidden-friends.html#:~:text=Rules%20for%20Visibility%20of%20Hidden,need%20to%20find%20hidden%20friends)">https://www.justsoftwaresolutions.co.uk/cplusplus/hidden-friends.html#:~:text=Rules%20for%20Visibility%20of%20Hidden,need%20to%20find%20hidden%20friends)</a>.</li>
+</ul>
+<h1 id="tute-questions-not-covered">tute questions not covered</h1>
+<ul>
+<li>tut01, 02, 03Q1-Q3</li>
+</ul>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/life">日常</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#wed">Wed</a></li>
+    <li><a href="#thurs">Thurs</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#wed-1">Wed</a>
+      <ul>
+        <li><a href="#lambda-function-need-to-revisit"><strong>Lambda function need to revisit!!</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#thurs-1">Thurs</a>
+      <ul>
+        <li><a href="#more-on-vector-need-to-revisit-later"><strong>More on vector: need to revisit later!!!</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#wed-2">Wed</a></li>
+    <li><a href="#thurs-2">Thurs</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#weds">Weds</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&text=All%20about%20cpp" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&title=All%20about%20cpp" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&is_video=false&description=All%20about%20cpp" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=All%20about%20cpp&body=Check out this article: https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&title=All%20about%20cpp" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&title=All%20about%20cpp" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&name=All%20about%20cpp&description=Week%201%20Wed%20community%3a%20%23include%20%26lt%3bc%2b%2b%26gt%3b%20quick%20links%3a%20https%3a%2f%2fabseil.io%2f%20https%3a%2f%2fwww.stroustrup.com%2findex.html%20const%20auto%20const%20course_code%20%3d%20std%3astring%28%26quot%3bCOMP6771%26quot%3b%29%20The%20whole%20string%20is%20constant%20If%20the%20const%20is%20on%20string%20builder%2c%20the%20string%20that%20is%20appended%20everytime%20is%20constant%20const%20is%20always%20on%20the%20right%20string%20comparision%20and%20assignment%20%21%3d%20to%20compare%20two%20string%20literal%20values%20not%20reference%20of%20string%20%28unlike%20Java%29%20The%20slide%20mentions%20C%2b%2b%20value%20semantics%20Thurs%20The%20compiler%20we%26rsquo%3bre%20using%3a%20clang%2b%2b-11%20hello." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fichbinchicken.github.io%2fposts%2fall_about_cpp%2f&t=All%20about%20cpp" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  会稽山下磨叽喵 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/life">日常</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

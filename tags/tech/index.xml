@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tech on 会稽山下磨叽喵</title>
+    <link>https://ichbinchicken.github.io/tags/tech/</link>
+    <description>Recent content in tech on 会稽山下磨叽喵</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Sep 2020 15:45:40 +1000</lastBuildDate><atom:link href="https://ichbinchicken.github.io/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>All about cpp</title>
+      <link>https://ichbinchicken.github.io/posts/all_about_cpp/</link>
+      <pubDate>Mon, 14 Sep 2020 15:45:40 +1000</pubDate>
+      
+      <guid>https://ichbinchicken.github.io/posts/all_about_cpp/</guid>
+      <description>Week 1 Wed community: #include &amp;lt;c++&amp;gt; quick links: https://abseil.io/ https://www.stroustrup.com/index.html const auto const course_code = std:string(&amp;quot;COMP6771&amp;quot;) The whole string is constant If the const is on string builder, the string that is appended everytime is constant const is always on the right string comparision and assignment != to compare two string literal values not reference of string (unlike Java) The slide mentions C++ value semantics Thurs The compiler we&amp;rsquo;re using: clang++-11 hello.</description>
+    </item>
+    
+  </channel>
+</rss>

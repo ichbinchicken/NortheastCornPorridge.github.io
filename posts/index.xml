@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 会稽山下磨叽喵</title>
+    <link>https://ichbinchicken.github.io/posts/</link>
+    <description>Recent content in Posts on 会稽山下磨叽喵</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Nov 2020 00:03:33 +1100</lastBuildDate><atom:link href="https://ichbinchicken.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Customise markdown preview enhanced plugin in vscode</title>
+      <link>https://ichbinchicken.github.io/posts/customisation_of_markdown_preview_enhanced/</link>
+      <pubDate>Sat, 14 Nov 2020 00:03:33 +1100</pubDate>
+      
+      <guid>https://ichbinchicken.github.io/posts/customisation_of_markdown_preview_enhanced/</guid>
+      <description>Step 1: Download vscode markdown preview enhanced plugin in vscode
+Step 2: On Ubuntu, use shortcut Ctrl + Shift + p to enable vscode command.
+Step 3: Type to search &amp;ldquo;Markdown Preview Enhanced: Customize CSS&amp;rdquo; command
+Step 4: Then it will open a css file called style.less. Next, just copy the css setting below into that file. That&amp;rsquo;s it and save the file!
+/* Please visit the URL below for more information: */ /* https://shd101wyy.</description>
+    </item>
+    
+    <item>
+      <title>All about cpp</title>
+      <link>https://ichbinchicken.github.io/posts/all_about_cpp/</link>
+      <pubDate>Mon, 14 Sep 2020 15:45:40 +1000</pubDate>
+      
+      <guid>https://ichbinchicken.github.io/posts/all_about_cpp/</guid>
+      <description>Week 1 Wed community: #include &amp;lt;c++&amp;gt; quick links: https://abseil.io/ https://www.stroustrup.com/index.html const auto const course_code = std:string(&amp;quot;COMP6771&amp;quot;) The whole string is constant If the const is on string builder, the string that is appended everytime is constant const is always on the right string comparision and assignment != to compare two string literal values not reference of string (unlike Java) The slide mentions C++ value semantics Thurs The compiler we&amp;rsquo;re using: clang++-11 hello.</description>
+    </item>
+    
+    <item>
+      <title>Hello</title>
+      <link>https://ichbinchicken.github.io/posts/hello/</link>
+      <pubDate>Sun, 26 Jul 2020 11:51:56 +1000</pubDate>
+      
+      <guid>https://ichbinchicken.github.io/posts/hello/</guid>
+      <description>This is my first blog post. Thank you for visiting my blog site!&amp;quot; 💙</description>
+    </item>
+    
+  </channel>
+</rss>

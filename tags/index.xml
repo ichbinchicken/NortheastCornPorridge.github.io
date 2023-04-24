@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 会稽山下磨叽喵</title>
+    <link>https://ichbinchicken.github.io/tags/</link>
+    <description>Recent content in Tags on 会稽山下磨叽喵</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Sep 2020 15:45:40 +1000</lastBuildDate><atom:link href="https://ichbinchicken.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tech</title>
+      <link>https://ichbinchicken.github.io/tags/tech/</link>
+      <pubDate>Mon, 14 Sep 2020 15:45:40 +1000</pubDate>
+      
+      <guid>https://ichbinchicken.github.io/tags/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travel</title>
+      <link>https://ichbinchicken.github.io/tags/travel/</link>
+      <pubDate>Thu, 20 Aug 2020 00:34:58 +1000</pubDate>
+      
+      <guid>https://ichbinchicken.github.io/tags/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>home</title>
+      <link>https://ichbinchicken.github.io/tags/home/</link>
+      <pubDate>Sun, 09 Aug 2020 02:11:38 +1000</pubDate>
+      
+      <guid>https://ichbinchicken.github.io/tags/home/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>intro</title>
+      <link>https://ichbinchicken.github.io/tags/intro/</link>
+      <pubDate>Sun, 26 Jul 2020 11:51:56 +1000</pubDate>
+      
+      <guid>https://ichbinchicken.github.io/tags/intro/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
